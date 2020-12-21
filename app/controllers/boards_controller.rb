@@ -8,6 +8,9 @@ class BoardsController < ApplicationController
   def create
     Board.create(board_params)
   end
+  def show
+    @board = Board.find_by(id: params[:id])
+  end
 
   private
 
