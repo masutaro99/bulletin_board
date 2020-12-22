@@ -6,7 +6,8 @@ class BoardsController < ApplicationController
     @board = Board.new
   end
   def create
-    Board.create(board_params)
+    board = Board.create(board_params)
+    redirect_to board
   end
   def show
     @board = Board.find_by(id: params[:id])
@@ -18,6 +19,11 @@ class BoardsController < ApplicationController
     board = Board.find_by(id: params[:id])
     board.update(board_params)
     redirect_to(board_path)
+  end
+  def destroy
+    board = Board.find_by(id: params[:id])
+    board.delete
+    redirect_to boards_path
   end
 
   private
