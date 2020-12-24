@@ -13,7 +13,7 @@
 #
 #  index_comments_on_board_id  (board_id)
 #
-# Foreign Ke
+# Foreign Keys
 #
 #  fk_rails_...  (board_id => boards.id)
 #
