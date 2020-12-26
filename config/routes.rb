@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'user/new'
+
+  get 'user/create'
+
+  get 'user/me'
+
+  get 'home/index'
+
   get 'sessions/create'
 
   get 'sessions/destroy'
