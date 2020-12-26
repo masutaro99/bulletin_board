@@ -14,11 +14,10 @@
 #
 class User < ApplicationRecord
   has_secure_password
-
   validates :name,
     presence: true,
     uniqueness: true,
-    length: {maxumum: 16},
+    length: {maximum: 16},
     #\Aはファイルの戦闘にマッチ、\zはファイルの末尾にマッチ、[a-z0-9]は任意の小文字英数字、+は直前の文字の1回以上の繰り返し
     format: {
       with: /\A[a-z0-9]+\z/,
