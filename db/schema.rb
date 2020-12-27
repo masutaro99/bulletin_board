@@ -10,49 +10,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20201226140513) do
+ActiveRecord::Schema.define(version: 2020_12_27_031307) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "board_tag_relations", force: :cascade do |t|
-    t.integer  "board_id"
-    t.integer  "tag_id"
+  create_table "board_tag_relations", id: :serial, force: :cascade do |t|
+    t.integer "board_id"
+    t.integer "tag_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["board_id"], name: "index_board_tag_relations_on_board_id", using: :btree
-    t.index ["tag_id"], name: "index_board_tag_relations_on_tag_id", using: :btree
+    t.index ["board_id"], name: "index_board_tag_relations_on_board_id"
+    t.index ["tag_id"], name: "index_board_tag_relations_on_tag_id"
   end
 
-  create_table "boards", force: :cascade do |t|
-    t.string   "name"
-    t.string   "title"
-    t.text     "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "comments", force: :cascade do |t|
-    t.integer  "board_id"
-    t.string   "name",       null: false
-    t.text     "comment",    null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["board_id"], name: "index_comments_on_board_id", using: :btree
-  end
-
-  create_table "tags", force: :cascade do |t|
-    t.string   "name",       null: false
+  create_table "boards", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.string "title"
+    t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string   "name",            null: false
-    t.string   "password_digest", null: false
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.index ["name"], name: "index_users_on_name", unique: true, using: :btree
+  create_table "comments", id: :serial, force: :cascade do |t|
+    t.integer "board_id"
+    t.string "name", null: false
+    t.text "comment", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["board_id"], name: "index_comments_on_board_id"
+  end
+
+  create_table "tags", id: :serial, force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", id: :serial, force: :cascade do |t|
+    t.string "name", null: false
+    t.string "password_digest", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.date "birthday"
+    t.index ["name"], name: "index_users_on_name", unique: true
   end
 
   add_foreign_key "board_tag_relations", "boards"

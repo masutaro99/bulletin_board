@@ -38,6 +38,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'annotate'
   gem 'rails-flog', require: 'flog'
+  gem 'rspec-rails'
 end
 
 group :development do
