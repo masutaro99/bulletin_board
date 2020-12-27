@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get 'users/me'
 
-  get "mypage", to: "user#me"
+  get "mypage", to: "users#me"
   post "login", to: "sessions#create"
   delete "logout", to: "sessions#destroy"
 
