@@ -17,6 +17,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   describe "#age" do
+    # time zone で返す値を固定している
     before do
       allow(Time.zone).to receive(:now).and_return(Time.zone.parse("2018/04/01"))
     end
