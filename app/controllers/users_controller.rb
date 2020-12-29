@@ -9,6 +9,7 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect_to boards_path
     else
+    # :backを渡して1つ前のページに戻る
       redirect_to :back, flash: {
         user: user,
         error_messages: user.errors.full_messages
