@@ -39,6 +39,7 @@ group :development, :test do
   gem 'annotate'
   gem 'rails-flog', require: 'flog'
   gem 'rspec-rails'
+  gem 'rails-controller-testing'
 end
 
 group :development do

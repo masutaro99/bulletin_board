@@ -28,11 +28,12 @@ jobs:
             set -x
             docker-compose up -d
             docker-compose exec --env RAILS_ENV=test web rails db:create
-            docker-compose exec --env RAILS_ENV=test web rails db:migrate            
+            docker-compose exec --env RAILS_ENV=test web rails db:migrate
+            docker-compose exec --env RAILS_ENV=test web rails s -b 0.0.0.0 -d
       - run:
           name: test
           command: |
-            docker-compose exec --env RAILS_ENV=test web rspec
+            docker-compose exec --env RAILS_ENV=test web rspec -f d
       - run:
           name: docker-compose down
           command: docker-compose down
