@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     user = User.new(user_params)
     if user.save
       session[:user_id] = user.id
-      redirect_to boards_path
+      redirect_to mypage_path
     else
     # :backを渡して1つ前のページに戻る
       redirect_to :back, flash: {
