@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       redirect_to mypage_path
     else
     # :backを渡して1つ前のページに戻る
-      redirect_to :back, flash: {
+      redirect_back fallback_location: root_path, flash: {
         user: user,
         error_messages: user.errors.full_messages
       }
