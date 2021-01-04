@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'contacts/new'
   get 'users/new'
 
   get 'users/create'
