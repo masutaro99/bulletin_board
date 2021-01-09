@@ -7,23 +7,23 @@
     <%= form_with(model: @contact, local: true) do |f| %>
 
     <div class="form-group">
-      <%= f.label :title %>
+      <%= f.label :title, "件名" %>
       <%# プルダウンの選択肢を作成している、引数は保存先のカラム、 [表示、実際にDBに保存させる内容]%>
       <%= f.select :title, [["サービスについて", "サービスについて"], ["採用について", "採用について"], ["請求について", "請求について"]], include_blank: "選択して下さい", class: "form-control" %>
     </div>
 
     <div class="form-group">
-      <%= f.label :name %>
+      <%= f.label :name, "名前" %>
       <%= f.text_field :name, class: "form-control" %>
     </div>
 
     <div class="form-group">
-      <%= f.label :email %>
+      <%= f.label :email, "Eメール" %>
       <%= f.text_field :email, class: "form-control" %>
     </div>
 
     <div class="form-group">
-      <%= f.label :content %>
+      <%= f.label :content, "内容" %>
       <%= f.text_area :content, class: "form-control", rows: 7 %>
     </div>
 
