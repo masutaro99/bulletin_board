@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # get "contacts/new", to: "contacts#new"
   # post "contacts/create", to: "contacts#create"
   resources :contacts, only: [:new, :create] do
