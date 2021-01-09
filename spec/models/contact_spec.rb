@@ -6,7 +6,7 @@
 #  content    :text
 #  email      :string           not null
 #  name       :string           not null
-#  status     :integer
+#  status     :integer          default("yet")
 #  title      :text             not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
