@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   end
 
   get "mypage", to: "users#me"
-  get "admin/index", to: "admin#index"
+  get "check/index", to: "check#index"
 
   # session管理系
   post "login", to: "sessions#create"
