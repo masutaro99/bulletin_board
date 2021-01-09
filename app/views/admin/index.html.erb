@@ -1,0 +1,28 @@
+<h1>お問い合わせ管理</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>件名</th>
+      <th>名前</th>
+      <th>Eメール</th>
+      <th>内容</th>
+      <th>ステータス</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contacts.each do |contact| %>
+    <tr>
+      <td><%= contact.id %></td>
+      <td><%= contact.title %></td>
+      <td><%= contact.name %></td>
+      <td><%= contact.email %></td>
+      <td><%= contact.content %></td>
+      <td><%= contact.status %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

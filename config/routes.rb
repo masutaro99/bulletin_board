@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   resources :contacts, only: [:new, :create] do
     get 'thanks', on: :collection
   end
-    
+
   get "mypage", to: "users#me"
+  get "admin/index", to: "admin#index"
 
   # session管理系
   post "login", to: "sessions#create"
