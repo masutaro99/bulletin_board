@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  get 'contacts/new'
-  
+  # get "contacts/new", to: "contacts#new"
+  # post "contacts/create", to: "contacts#create"
+  resources :contacts, only: [:new, :create] do
+    get 'thanks', on: :collection
+  end
+    
   get "mypage", to: "users#me"
 
   # session管理系
